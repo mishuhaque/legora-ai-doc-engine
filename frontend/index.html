@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Legora AI Document Intelligence Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8">
+  <div class="max-w-5xl mx-auto bg-white p-6 rounded-xl shadow">
+
+    <!-- Title -->
+    <h1 class="text-3xl font-bold mb-6 text-gray-800">
+      Legora AI Document Intelligence Demo
+    </h1>
+
+    <!-- Upload Row -->
+    <div class="flex items-center space-x-4 mb-6">
+      <input type="file" id="doc"
+        class="border rounded px-4 py-2 w-full bg-gray-50" />
+      <button onclick="upload()"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+        Analyze
+      </button>
+    </div>
+
+    <!-- Document History -->
+    <h2 class="text-xl font-semibold mb-2">Document History</h2>
+    <table class="w-full mb-6 border-collapse" id="historyTable">
+      <tr class="bg-gray-200 text-left">
+        <th class="p-2 border">File</th>
+        <th class="p-2 border">Type</th>
+        <th class="p-2 border">Uploaded</th>
+      </tr>
+    </table>
+
+    <!-- Tabs -->
+    <div class="mt-6">
+      <div class="flex space-x-4 border-b pb-2 mb-4">
+        <button onclick="showTab('fields')" class="tab-btn text-blue-600">Fields</button>
+        <button onclick="showTab('workflow')" class="tab-btn">Workflow</button>
+        <button onclick="showTab('rules')" class="tab-btn">Rules</button>
+      </div>
+
+      <pre id="fields"   class="tab-content hidden bg-gray-900 text-green-300 p-4 rounded max-h-[450px] overflow-auto"></pre>
+      <pre id="workflow" class="tab-content hidden bg-gray-900 text-green-300 p-4 rounded max-h-[450px] overflow-auto"></pre>
+      <pre id="rules"    class="tab-content hidden bg-gray-900 text-green-300 p-4 rounded max-h-[450px] overflow-auto"></pre>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
