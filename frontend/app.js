@@ -11,7 +11,7 @@ async function upload() {
   form.append("file", file);
 
   // Call backend
-  const res = await fetch("http://localhost:8000/analyze", {
+  const res = await fetch("https://legora-ai-doc-engine.onrender.com/analyze", {
     method: "POST",
     body: form
   });
